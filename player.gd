@@ -14,22 +14,17 @@ var target_velo = Vector3.ZERO
 
 # no jumping 
 func _physics_process(delta):
-	var direction = Vector3.ZERO
 	
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("move_back"):
-		direction.z += 1
-	if Input.is_action_pressed("move_forward"):
-		direction.z -= 1
+	var input = Input.get_vector("move_left","move_right", "move_forward", "mvoe_back")
 	
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
+	var movement = transform.basis * Vector3(input.x, 0, input.y)
+
+	
+	if movement != Vector3.ZERO:
+		movement = movement.normalized()
 		
-	target_velo.x = direction.x * speed
-	target_velo.z = direction.z * speed
+	target_velo.x = movement.x * speed
+	target_velo.z = movement.z * speed
 	
 	velocity = target_velo
 	move_and_slide() 
