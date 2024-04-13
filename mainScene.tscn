@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmgbcnxrr667c"]
 
 [ext_resource type="PackedScene" uid="uid://cid071jugrrvn" path="res://player.tscn" id="1_hbik5"]
-[ext_resource type="Material" uid="uid://dt72a3686blur" path="res://Textures/godot-material-concrete-1.0.1/materials/concrete_hd/concrete.tres" id="1_mhujt"]
+[ext_resource type="Material" path="res://Textures/godot-material-concrete-1.0.1/materials/concrete_hd/concrete.tres" id="1_mhujt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixwju"]
 transparency = 1
