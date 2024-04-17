@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmgbcnxrr667c"]
+[gd_scene load_steps=3 format=3 uid="uid://dmgbcnxrr667c"]
 
 [ext_resource type="PackedScene" uid="uid://cid071jugrrvn" path="res://player.tscn" id="1_hbik5"]
-[ext_resource type="Material" path="res://Textures/godot-material-concrete-1.0.1/materials/concrete_hd/concrete.tres" id="1_mhujt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixwju"]
 transparency = 1
@@ -13,7 +12,6 @@ emission_energy_multiplier = 2.62
 
 [node name="Room" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-material_override = ExtResource("1_mhujt")
 lod_bias = 0.001
 use_collision = true
 flip_faces = true

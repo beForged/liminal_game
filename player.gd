@@ -35,7 +35,9 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera_3d.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera_3d.rotation.x = clampf(camera_3d.rotation.x, -deg_to_rad(70), deg_to_rad(70))
-		
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE: # can also pout this in _process like:	if Input.is_action_pressed("exit"):
+			get_tree().change_scene_to_file("res://main_menu.tscn")
 		
 		
 		
