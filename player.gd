@@ -6,6 +6,7 @@ extends CharacterBody3D
 
 
 @onready var camera_3d = %Camera3D
+@onready var audio_stream_player_3d = %AudioStreamPlayer3D
 
 
 
@@ -41,6 +42,7 @@ func _input(event):
 		if event.pressed and event.keycode == KEY_ESCAPE: # can also pout this in _process like:	if Input.is_action_pressed("exit"):
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			get_tree().change_scene_to_file("res://main_menu.tscn")
-		
+		if event.pressed and event.keycode == KEY_E:
+			audio_stream_player_3d.play()
 		
 		

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmgbcnxrr667c"]
+[gd_scene load_steps=6 format=3 uid="uid://dmgbcnxrr667c"]
 
 [ext_resource type="Script" path="res://mainScene.gd" id="1_gohfv"]
 [ext_resource type="PackedScene" uid="uid://cid071jugrrvn" path="res://player.tscn" id="1_hbik5"]
 [ext_resource type="PackedScene" uid="uid://etr3wftl0ubb" path="res://gameplay_ui.tscn" id="2_vpbl1"]
+[ext_resource type="AudioStream" uid="uid://rp3s8wmvbo27" path="res://VID_20240417_161015.wav" id="4_s6mbl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixwju"]
 transparency = 1
@@ -44,3 +45,8 @@ spot_angle = 65.9831
 
 [node name="HUDui" parent="." instance=ExtResource("2_vpbl1")]
 unique_name_in_owner = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 1, 63)
+stream = ExtResource("4_s6mbl")
