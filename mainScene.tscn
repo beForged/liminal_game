@@ -26,8 +26,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0313, 0.706753, 4.09335)
 use_collision = true
 size = Vector3(4.5, 1.4, 1.9)
 
+[node name="Car proto2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.997, 0.718292, 63.18)
+use_collision = true
+size = Vector3(4.5, 1.4, 1.9)
+
 [node name="Player" parent="." instance=ExtResource("1_hbik5")]
 unique_name_in_owner = true
+speed = 20
 
 [node name="light proto" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87571, 9.9, 2.90042)
@@ -43,6 +49,20 @@ light_energy = 20.0
 spot_range = 16.671
 spot_angle = 65.9831
 
+[node name="light proto2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.4743, 9.9, 63.3942)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="light proto2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.361106, 0)
+material_override = SubResource("StandardMaterial3D_ixwju")
+size = Vector3(4.85788, 0.201172, 0.569336)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="light proto2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 20.0
+spot_range = 16.671
+spot_angle = 65.9831
+
 [node name="HUDui" parent="." instance=ExtResource("2_vpbl1")]
 unique_name_in_owner = true
 
@@ -50,3 +70,4 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 1, 63)
 stream = ExtResource("4_s6mbl")
+max_distance = 10.0

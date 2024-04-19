@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var hud_ui = %HUDui
 @onready var audio_stream_player_3d = %AudioStreamPlayer3D
+@onready var player = %Player
 
 var tutorial = [
 	"move the mouse to look around",
@@ -39,9 +40,12 @@ func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_E:
 			audio_stream_player_3d.play()
+			
+			if player.position.distance_to(audio_stream_player_3d.position) < 10:
+				hud_ui.display_text("you win")
 
 func show_tutorial(num):
-	hud_ui.display_text(tutorial[num], 5)
+	hud_ui.display_text(tutorial[num])
 		
 func hide_tutorial():
 	hud_ui.hide_text()

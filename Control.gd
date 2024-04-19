@@ -6,7 +6,7 @@ extends Control
 var end = Color(1.0, 1.0, 1.0, 1.0)
 var start = Color(1.0, 1.0, 1.0, 0.0)
 	
-func display_text(text, duration):
+func display_text(text):
 	var tween = get_tree().create_tween()
 	tween.tween_property(label, "self_modulate", end, 1)
 	# label.self_modulate = Color(1.0, 1.0, 1.0, lerp(0.0, 1.0, ))
