@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmgbcnxrr667c"]
+[gd_scene load_steps=8 format=3 uid="uid://dmgbcnxrr667c"]
 
 [ext_resource type="Script" path="res://mainScene.gd" id="1_gohfv"]
 [ext_resource type="PackedScene" uid="uid://cid071jugrrvn" path="res://player.tscn" id="1_hbik5"]
 [ext_resource type="PackedScene" uid="uid://etr3wftl0ubb" path="res://gameplay_ui.tscn" id="2_vpbl1"]
 [ext_resource type="AudioStream" uid="uid://rp3s8wmvbo27" path="res://VID_20240417_161015.wav" id="4_s6mbl"]
+[ext_resource type="ArrayMesh" uid="uid://24wpd82tr1f6" path="res://car-scaleref.obj" id="5_cr0w4"]
+[ext_resource type="ArrayMesh" uid="uid://vm3uiuqmwhof" path="res://car-scaleref-smooth.obj" id="6_ho3xn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixwju"]
 transparency = 1
@@ -46,6 +48,7 @@ size = Vector3(4.85788, 0.201172, 0.569336)
 [node name="SpotLight3D" type="SpotLight3D" parent="light proto"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 light_energy = 20.0
+shadow_enabled = true
 spot_range = 16.671
 spot_angle = 65.9831
 
@@ -71,3 +74,11 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 1, 63)
 stream = ExtResource("4_s6mbl")
 max_distance = 10.0
+
+[node name="Car-scaleref" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5848, -4.76837e-07, 5.58101)
+mesh = ExtResource("5_cr0w4")
+
+[node name="Car-scaleref-smooth" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54999, 0, 5.77336)
+mesh = ExtResource("6_ho3xn")

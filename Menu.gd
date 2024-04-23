@@ -9,7 +9,10 @@ func _ready():
 	quitbutton.pressed.connect(self.closeButtonPressed)
 	
 
-
+func _input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			closeButtonPressed()
 
 func closeButtonPressed():
 	get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
