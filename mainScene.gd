@@ -41,8 +41,9 @@ func _input(event):
 		if event.pressed and event.keycode == KEY_E:
 			audio_stream_player_3d.play()
 			
-			if player.position.distance_to(audio_stream_player_3d.position) < 10:
-				hud_ui.display_text("you win")
+			if player.position.distance_to(audio_stream_player_3d.position) < 5:
+				hud_ui.display_text("you found your car congrats (press esc to exit to menu)")
+				
 
 func show_tutorial(num):
 	hud_ui.display_text(tutorial[num])
